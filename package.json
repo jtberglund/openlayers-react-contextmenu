@@ -1,39 +1,57 @@
 {
-  "name": "openlayers-react-contextmenu",
-  "version": "1.0.0-alpha.1",
-  "description": "React context menu component for use in an OpenLayers map",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jtberglund/openlayers-react-contextmenu.git"
-  },
-  "keywords": [
-    "openlayers",
-    "react",
-    "context-menu",
-    "ol",
-    "typescript"
-  ],
-  "author": "Jeremy Berglund",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jtberglund/openlayers-react-contextmenu/issues"
-  },
-  "homepage": "https://github.com/jtberglund/openlayers-react-contextmenu#readme",
-  "dependencies": {
-    "lodash": "^4.17.11",
-    "ol": "^6.0.0-beta.6",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.123",
-    "@types/react": "^16.8.16",
-    "@types/react-dom": "^16.8.4",
-    "jest": "^24.8.0",
-    "typescript": "^3.4.5"
-  }
+    "name": "openlayers-react-contextmenu",
+    "version": "1.0.0-alpha.1",
+    "description": "React context menu component for use in an OpenLayers map",
+    "main": "index.js",
+    "scripts": {
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "npm run type-check -- --watch",
+        "build": "npm run build:types && npm run build:js",
+        "build:types": "tsc --emitDeclarationOnly",
+        "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jtberglund/openlayers-react-contextmenu.git"
+    },
+    "keywords": [
+        "openlayers",
+        "react",
+        "context-menu",
+        "ol",
+        "typescript"
+    ],
+    "author": "Jeremy Berglund",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jtberglund/openlayers-react-contextmenu/issues"
+    },
+    "homepage": "https://github.com/jtberglund/openlayers-react-contextmenu#readme",
+    "dependencies": {
+        "lodash": "^4.17.11"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.4",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.3.3",
+        "@types/lodash": "^4.14.123",
+        "@types/react": "^16.8.16",
+        "@types/react-dom": "^16.8.4",
+        "jest": "^24.8.0",
+        "ol": "^6.0.0-beta.6",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-testing-library": "^7.0.0",
+        "typescript": "^3.4.5"
+    },
+    "peerDependencies": {
+        "ol": "^6.0.0-beta.6",
+        "react": "^16.8.0",
+        "react-dom": "^16.8.0"
+    }
 }
